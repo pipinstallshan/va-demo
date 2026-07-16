@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Voice Agent Demo
 
-## Getting Started
+A client-facing AI receptionist demo built with Next.js and Tailwind.
 
-First, run the development server:
+It includes a polished landing page, an interactive simulated voice widget, live transcript states, tool-call indicators, latency messaging, and a production architecture section. The demo is designed to be sent to clients as a proof of concept for a Vapi or Retell-powered voice agent.
+
+## Features
+
+- Dark premium landing page for an AI receptionist offer
+- Simulated voice call widget with transcript progression
+- RAG, calendar, and CRM tool-call indicators
+- Lead qualification and appointment booking outcome panel
+- Architecture section for Vapi/Retell, FastAPI, LangGraph, and RAG
+
+## Tech Stack
+
+- Next.js App Router
+- React
+- TypeScript
+- Tailwind CSS
+
+## Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## Deploy as a Client Link
 
-To learn more about Next.js, take a look at the following resources:
+Fastest option with Vercel:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npx vercel --prod
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Or push this folder to GitHub and import it into Vercel.
 
-## Deploy on Vercel
+## Wire to Real Voice
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The current widget is a no-key simulated demo that is safe to send as a proof of concept. To make it live:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Connect the widget to Vapi or Retell
+- Route tool calls to a FastAPI backend
+- Add RAG retrieval over business docs
+- Connect booking through Cal.com or a CRM calendar
+- Log transcripts, outcomes, and lead details to a dashboard
+
+Optional environment variables are listed in `.env.example`.
+
